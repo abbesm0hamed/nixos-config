@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Script to cycle through system info display modes
 STATE_FILE="/tmp/waybar-system-info-mode"

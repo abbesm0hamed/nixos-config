@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Combined system info script for waybar
 # Shows CPU, Memory, and Storage in one module
