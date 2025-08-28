@@ -30,9 +30,7 @@
         // "niri/language",
         "custom/fingerprint",
         "tray",
-        "custom/storage",
-        "memory",
-        "cpu",
+        "custom/system-info",
         "backlight",
         "wireplumber",
         "network",
@@ -130,6 +128,16 @@
         "return-type": "json",
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh"
+    },
+    "custom/system-info": {
+        "format": "{}",
+        "return-type": "json",
+        "interval": 5,
+        "exec": "~/.config/waybar/scripts/system-info.sh",
+        "on-click": "~/.config/waybar/scripts/cycle-system-info.sh",
+        "on-click-right": "ghostty -e btop",
+        "signal": 8,
+        "tooltip": true
     },
     "custom/next-prayer": {
         "format": "{}",
