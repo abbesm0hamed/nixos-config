@@ -65,17 +65,18 @@ in
     # Container & Cloud tools
     docker
     docker-compose
-
-
     kubectl
     terraform
+
+    # db
+    beekeeper-studio
     
     # API & Network tools
     httpie  # Better curl alternative
     # bruno  # API testing
     # postman
     yaak
-    tableplus
+
     
     # Code quality & formatting
     shellcheck  # Shell script linting
