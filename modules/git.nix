@@ -36,7 +36,7 @@
       "github.com" = {
         hostname = "github.com";
         user = "git";
-        identityFile = "${config.home.homeDirectory}/.ssh/github_rsa";
+        identityFile = "${config.home.homeDirectory}/.ssh/github";
       };
     };
   };
