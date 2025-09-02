@@ -218,12 +218,6 @@
     };
   };
 
-  # Related shell tools configuration
-  programs.starship = {
-    enable = true;
-    # Your starship config will be loaded from ~/.config/starship.toml
-  };
-
   programs.zoxide = {
     enable = true;
   };
