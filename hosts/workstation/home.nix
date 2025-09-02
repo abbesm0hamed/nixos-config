@@ -68,8 +68,8 @@ in
     kubectl
     terraform
 
-    # db
-    beekeeper-studio
+    # Database Management Tools
+    dbeaver-bin         # Universal database tool (80+ databases)
     
     # API & Network tools
     httpie  # Better curl alternative
