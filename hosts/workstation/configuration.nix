@@ -119,16 +119,17 @@ in
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Display Manager and Wayland Compositor
-  services.xserver.enable = true;  # Still needed for LightDM
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.displayManager.lightdm.greeters.gtk.enable = true;  
+  # SDDM has better Wayland support than LightDM
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;  
+  
   # Emergency fallback desktop (lightweight)
   # To enable fallback: rebuild with --override-input or set to true
+  services.xserver.enable = true;  # Still needed for XFCE fallback
   services.xserver.desktopManager.xfce.enable = lib.mkDefault false;  # Disabled by default
   
   # Primary compositor
   programs.niri.enable = true;
-  
   
   services.autorandr.enable = true;  # Auto display profiles
 
