@@ -124,13 +124,68 @@ in
     enable = true;
     wayland.enable = true;
     
-    # Simple theme with your background
+    # Beautiful custom theme with Catppuccin Mocha colors
     theme = "breeze";
     settings = {
       General = {
-        background = toString locals.wallpapers.blurred;
-        font = "SpaceMono Nerd Font";
-        fontSize = "12";
+        # Background and basic settings
+        Background = toString locals.wallpapers.blurred;
+        DimBackgroundImage = "0.0";
+        ScaleImageCropped = "true";
+        
+        # Font configuration
+        Font = "SpaceMono Nerd Font";
+        FontSize = "12";
+        
+        # Catppuccin Mocha color scheme
+        ThemeColor = "#89b4fa";  # Blue accent
+        ThemeColorLight = "#cba6f7";  # Purple accent
+        
+        # Session configuration
+        ForceHideCompletePassword = "true";
+        ForceHideVirtualKeyboardButton = "true";
+        FormPosition = "center";
+        FullBlur = "true";
+        PartialBlur = "true";
+        BlurRadius = "100";
+        
+        # Modern styling
+        MainColor = "#cdd6f4";  # Text color
+        AccentColor = "#89b4fa";  # Blue accent
+        BackgroundColor = "#1e1e2e";  # Dark background
+        OverrideLoginButtonTextColor = "#1e1e2e";
+        
+        # Disable avatars for clean look
+        EnableAvatars = "false";
+        UserPicture = "false";
+        
+        # Session and user settings
+        HideUsers = "";
+        HideCursor = "false";
+        CursorTheme = "";
+        
+        # Custom styling
+        HeaderText = "Welcome";
+        DateFormat = "dddd, MMMM d";
+      };
+      
+      # Theme-specific settings
+      Theme = {
+        # Custom colors for different states
+        Current = "#89b4fa";  # Blue
+        Error = "#f38ba8";    # Red
+        Success = "#a6e3a1";  # Green
+        Warning = "#f9e2af";  # Yellow
+      };
+      
+      # Users configuration
+      Users = {
+        MaximumUid = "60513";
+        MinimumUid = "1000";
+        HideUsers = "";
+        HideShells = "/bin/false,/usr/bin/nologin,/sbin/nologin";
+        RememberLastUser = "true";
+        RememberLastSession = "true";
       };
     };
   };  
@@ -288,6 +343,12 @@ in
     git
     curl
     wget
+    
+    # SDDM theme requirements
+    libsForQt5.qt5.qtgraphicaleffects  # For blur effects
+    libsForQt5.qt5.qtquickcontrols2    # For modern themes
+    libsForQt5.qt5.qtsvg               # For SVG support
+    libsForQt5.sddm-kcm               # SDDM configuration module
   ];
 
   # Fonts
