@@ -120,8 +120,60 @@ in
 
   # Display Manager and Wayland Compositor
   # SDDM has better Wayland support than LightDM
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;  
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    
+    # Beautiful theme configuration
+    theme = "breeze";
+    settings = {
+      General = {
+        # Use your beautiful blurry snake background
+        background = toString locals.wallpapers.blurred;
+        # Modern font matching your system
+        font = "SpaceMono Nerd Font";
+        fontSize = "12";
+        # Catppuccin Mocha colors matching your setup
+        primaryColor = "#89b4fa";  # Blue accent
+        backgroundColor = "#1e1e2e";  # Dark background
+        textColor = "#cdd6f4";  # Light text
+      };
+      
+      Theme = {
+        # Clean, minimal design
+        enableAvatars = "false";
+        disableAvatarsThreshold = "7";
+        facesDir = "/var/lib/AccountsService/icons";
+        
+        # Input field styling
+        background = toString locals.wallpapers.blurred;
+        primaryColor = "#89b4fa";
+        accentColor = "#cba6f7";
+        backgroundColor = "#1e1e2e";
+        disabledColor = "#6c7086";
+        
+        # Border and focus colors
+        borderColor = "#89b4fa";
+        focusColor = "#cba6f7";
+        hoverColor = "#89b4fa";
+        
+        # Text colors
+        textColor = "#cdd6f4";
+        errorColor = "#f38ba8";
+        successColor = "#a6e3a1";
+        
+        # Transparency and blur
+        backgroundFillColor = "#1e1e2e80";  # Semi-transparent
+        
+        # Modern rounded corners
+        cornerRadius = "0";
+        
+        # Animation and effects
+        enableBlur = "true";
+        blurRadius = "10";
+      };
+    };
+  };  
   
   # Emergency fallback desktop (lightweight)
   # To enable fallback: rebuild with --override-input or set to true
@@ -261,6 +313,11 @@ in
     git
     curl
     wget
+    
+    # SDDM theme support
+    libsForQt5.qt5.qtgraphicaleffects  # For SDDM blur effects
+    libsForQt5.qt5.qtquickcontrols2    # For modern SDDM themes
+    libsForQt5.qt5.qtsvg               # For SVG icon support in SDDM
   ];
 
   # Fonts

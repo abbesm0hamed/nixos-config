@@ -7,7 +7,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix.url = "github:nix-community/stylix/version-25.05";
+    stylix.url = "github:nix-community/stylix/release-25.05";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
