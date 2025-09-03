@@ -174,13 +174,13 @@ in
 
   # PAM configuration for fingerprint authentication
   security.pam.services = {
-    # Enable fingerprint for login (lightdm/display manager)
-    lightdm.fprintAuth = true;
+    # Enable fingerprint for login (sddm/display manager)
+    sddm.fprintAuth = true;
     
     # Enable fingerprint for sudo
     sudo.fprintAuth = true;
     
-    # Enable fingerprint for screen unlock (if using a screen locker that supports PAM)
+    # Enable fingerprint for screen unlock (swaylock compatible with Niri/Wayland)
     swaylock.fprintAuth = true;
     
     # Enable fingerprint for system authentication prompts
