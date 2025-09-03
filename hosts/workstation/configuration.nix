@@ -9,6 +9,7 @@ in
     ../../globals.nix # Import shared settings
     ./hardware-configuration.nix
     ./stylix.nix
+    ../../modules/sddm.nix
   ];
 
   # Bootloader configuration
@@ -118,25 +119,7 @@ in
   # Locale
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Display Manager and Wayland Compositor
-  # SDDM has better Wayland support than LightDM
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    
-    # Simple configuration with custom background
-    theme = "breeze";
-    settings = {
-      General = {
-        # Set custom background
-        Background = toString locals.wallpapers.blurred;
-        
-        # Hide user avatars and user list
-        EnableAvatars = "false";
-        UserPicture = "false";
-      };
-    };
-  };  
+  # Display Manager configuration is now in ./sddm.nix  
   
   # Emergency fallback desktop (lightweight)
   # To enable fallback: rebuild with --override-input or set to true
@@ -291,12 +274,6 @@ in
     git
     curl
     wget
-    
-    # SDDM theme requirements
-    libsForQt5.qt5.qtgraphicaleffects  # For blur effects
-    libsForQt5.qt5.qtquickcontrols2    # For modern themes
-    libsForQt5.qt5.qtsvg               # For SVG support
-    libsForQt5.sddm-kcm               # SDDM configuration module
   ];
 
   # Fonts
