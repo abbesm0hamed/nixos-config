@@ -296,10 +296,10 @@ in
     };
   };
   
-  # QT theming to match GTK
+  # QT theming to match GTK (simplified to avoid conflicts)
   qt = {
     enable = true;
-    platformTheme.name = "adwaita";
+    platformTheme.name = "gtk3";
     style.name = "adwaita-dark";
   };
 
