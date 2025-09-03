@@ -5,9 +5,6 @@
     enable = true;
     wayland.enable = true;
     
-    # Use stable breeze theme to avoid build issues
-    theme = "breeze";
-    
     settings = {
       General = {
         EnableAvatars = "false";
@@ -15,8 +12,4 @@
       };
     };
   };
-  
-  environment.systemPackages = with pkgs; [
-    sddm-astronaut
-  ];
 }
