@@ -20,8 +20,8 @@ in
   # Cursor theme configuration
   home.pointerCursor = {
     gtk.enable = true;
-    name = "capitaine-cursors";
-    package = pkgs.capitaine-cursors;
+    name = "Bibata-Modern-Ice";
+    package = pkgs.bibata-cursors;
     size = 28; 
   };
 
@@ -144,7 +144,7 @@ in
     
     # Theme and cursor support
     adwaita-icon-theme  # Default GNOME icon theme
-    capitaine-cursors   # macOS-like cursor theme
+    bibata-cursors      # Modern cursor theme
     gtk4  # GTK4 for modern theme support
 
     # libreoffice-qt6-fresh
@@ -212,7 +212,7 @@ in
 
   # Environment variables
   home.sessionVariables = {
-    XCURSOR_THEME = "capitaine-cursors";
+    XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE = "28";
     # Core environment
     EDITOR = "nvim";

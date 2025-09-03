@@ -16,7 +16,8 @@ in
   stylix.image = locals.wallpapers.main;
   
   stylix.cursor = {
-    theme = "capitaine-cursors";
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
     size = 28;
   };
   
