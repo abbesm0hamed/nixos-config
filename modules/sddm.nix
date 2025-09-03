@@ -1,8 +1,5 @@
 { config, lib, pkgs, ... }:
 
-let
-  locals = import ../hosts/workstation/locals.nix { inherit pkgs; };
-in
 {
   services.displayManager.sddm = {
     enable = true;

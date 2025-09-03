@@ -22,7 +22,7 @@ in
     gtk.enable = true;
     name = "capitaine-cursors";
     package = pkgs.capitaine-cursors;
-    size = 26; 
+    size = 28; 
   };
 
   # Install your packages here (keeping it minimal for fast setup)
@@ -213,7 +213,7 @@ in
   # Environment variables
   home.sessionVariables = {
     XCURSOR_THEME = "capitaine-cursors";
-    XCURSOR_SIZE = "26";
+    XCURSOR_SIZE = "28";
     # Core environment
     EDITOR = "nvim";
     BROWSER = "zen";
