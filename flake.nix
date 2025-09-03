@@ -2,12 +2,12 @@
   description = "NixOS configuration with existing dotfiles";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix.url = "github:nix-community/stylix";
+    stylix.url = "github:nix-community/stylix/version-25.05";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
