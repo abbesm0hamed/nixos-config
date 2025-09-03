@@ -15,6 +15,11 @@ in
   # Set wallpaper from locals.nix (Stylix can generate colors from your wallpaper)
   stylix.image = locals.wallpapers.main;
   
+  stylix.cursor = {
+    theme = "capitaine-cursors";
+    size = 28;
+  };
+  
   # Font configuration
   stylix.fonts = {
     monospace = {
