@@ -135,7 +135,7 @@ in
     auto-cpufreq  # Automatic CPU frequency scaling
     
     # File Management
-    kdePackages.dolphin
+    nemo
 
     # libreoffice-qt6-fresh
 

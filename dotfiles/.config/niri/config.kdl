@@ -271,7 +271,7 @@ layout {
 
 
 // Launch applications on startup with proper delays
-// spawn-at-startup "xwayland-satellite"
+spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"  // Notification daemon
 spawn-at-startup "bash" "-c" "swww-daemon && sleep 0.5 && swww img ~/.config/backgrounds/snaky.jpg"  // Workspace wallpaper
