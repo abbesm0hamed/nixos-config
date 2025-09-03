@@ -5,8 +5,8 @@
     enable = true;
     wayland.enable = true;
     
-    theme = "sddm-astronaut-theme";
-    extraPackages = with pkgs; [ sddm-astronaut ];
+    # Use stable breeze theme to avoid build issues
+    theme = "breeze";
     
     settings = {
       General = {
