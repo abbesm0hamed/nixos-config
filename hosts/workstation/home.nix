@@ -17,14 +17,6 @@ in
   home.homeDirectory = "/home/abbes";
   home.stateVersion = versions.homeManager;
 
-  # Cursor theme configuration
-  home.pointerCursor = {
-    gtk.enable = true;
-    name = "Bibata-Modern-Ice";
-    package = pkgs.bibata-cursors;
-    size = 28; 
-  };
-
   # Install your packages here (keeping it minimal for fast setup)
   home.packages = with pkgs; [
     # browser
