@@ -124,68 +124,16 @@ in
     enable = true;
     wayland.enable = true;
     
-    # Beautiful custom theme with Catppuccin Mocha colors
+    # Simple configuration with custom background
     theme = "breeze";
     settings = {
       General = {
-        # Background and basic settings
+        # Set custom background
         Background = toString locals.wallpapers.blurred;
-        DimBackgroundImage = "0.0";
-        ScaleImageCropped = "true";
         
-        # Font configuration
-        Font = "SpaceMono Nerd Font";
-        FontSize = "12";
-        
-        # Catppuccin Mocha color scheme
-        ThemeColor = "#89b4fa";  # Blue accent
-        ThemeColorLight = "#cba6f7";  # Purple accent
-        
-        # Session configuration
-        ForceHideCompletePassword = "true";
-        ForceHideVirtualKeyboardButton = "true";
-        FormPosition = "center";
-        FullBlur = "true";
-        PartialBlur = "true";
-        BlurRadius = "100";
-        
-        # Modern styling
-        MainColor = "#cdd6f4";  # Text color
-        AccentColor = "#89b4fa";  # Blue accent
-        BackgroundColor = "#1e1e2e";  # Dark background
-        OverrideLoginButtonTextColor = "#1e1e2e";
-        
-        # Disable avatars for clean look
+        # Hide user avatars and user list
         EnableAvatars = "false";
         UserPicture = "false";
-        
-        # Session and user settings
-        HideUsers = "";
-        HideCursor = "false";
-        CursorTheme = "";
-        
-        # Custom styling
-        HeaderText = "Welcome";
-        DateFormat = "dddd, MMMM d";
-      };
-      
-      # Theme-specific settings
-      Theme = {
-        # Custom colors for different states
-        Current = "#89b4fa";  # Blue
-        Error = "#f38ba8";    # Red
-        Success = "#a6e3a1";  # Green
-        Warning = "#f9e2af";  # Yellow
-      };
-      
-      # Users configuration
-      Users = {
-        MaximumUid = "60513";
-        MinimumUid = "1000";
-        HideUsers = "";
-        HideShells = "/bin/false,/usr/bin/nologin,/sbin/nologin";
-        RememberLastUser = "true";
-        RememberLastSession = "true";
       };
     };
   };  
