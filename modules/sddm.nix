@@ -7,10 +7,7 @@
     enable = true;
     wayland.enable = true;
     
-    # Custom astronaut theme
-    package = pkgs.kdePackages.sddm;
     theme = "sddm-astronaut-theme";
-    extraPackages = [ pkgs.sddm-astronaut ];
     
     settings = {
       General = {
@@ -20,4 +17,9 @@
       };
     };
   };
+  
+  # Install sddm-astronaut theme package
+  environment.systemPackages = with pkgs; [
+    sddm-astronaut
+  ];
 }

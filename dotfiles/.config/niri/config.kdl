@@ -278,7 +278,7 @@ spawn-at-startup "bash" "-c" "swww-daemon && sleep 0.5 && swww img ~/.config/bac
 spawn-at-startup "bash" "-c" "sleep 1 && swaybg -i ~/.config/backgrounds/blurry-snaky.jpg -m fill"  // Backdrop wallpaper for overview
 spawn-at-startup "bash" "-c" "sleep 2 && zen"
 spawn-at-startup "bash" "-c" "sleep 3 && ghostty"
-spawn-at-startup "bash" "-c" "sleep 4 && slack"
+// spawn-at-startup "bash" "-c" "sleep 4 && slack"
 // spawn-at-startup "bash" "-c" "sleep 5 && chromium --new-window --app=https://web.whatsapp.com"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.

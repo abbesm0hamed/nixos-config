@@ -118,8 +118,6 @@ in
 
   # Locale
   i18n.defaultLocale = "en_US.UTF-8";
-
-  # Display Manager configuration is now in ./sddm.nix  
   
   # Emergency fallback desktop (lightweight)
   # To enable fallback: rebuild with --override-input or set to true

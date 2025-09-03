@@ -17,6 +17,14 @@ in
   home.homeDirectory = "/home/abbes";
   home.stateVersion = versions.homeManager;
 
+  # Cursor theme configuration (macOS-like) - Wayland only
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = false;  # Disabled for pure Wayland
+    name = "capitaine-cursors";
+    package = pkgs.capitaine-cursors;
+    size = 24;  # Smaller cursor size
+  };
 
   # Install your packages here (keeping it minimal for fast setup)
   home.packages = with pkgs; [
@@ -136,7 +144,8 @@ in
     auto-cpufreq  # Automatic CPU frequency scaling
     
     # Theme and cursor support
-    adwaita-icon-theme  # Default GNOME icon and cursor theme
+    adwaita-icon-theme  # Default GNOME icon theme
+    capitaine-cursors   # macOS-like cursor theme
     gtk4  # GTK4 for modern theme support
 
     # libreoffice-qt6-fresh
@@ -204,6 +213,8 @@ in
 
   # Environment variables
   home.sessionVariables = {
+    XCURSOR_THEME = "capitaine-cursors";
+    XCURSOR_SIZE = "24";
     # Core environment
     EDITOR = "nvim";
     BROWSER = "zen";
