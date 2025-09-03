@@ -12,20 +12,11 @@ in
     enable = true;
     wayland.enable = true;
     
-    # Theme configuration
     theme = "sddm-astronaut-theme";
-    extraPackages = with pkgs; [ sddm-astronaut ];
-    
-    # Custom settings
-    settings = {
-      General = {
-        # Custom background from locals.nix
-        Background = toString locals.wallpapers.blurred;
-        
-        # Hide user avatars and user list
-        EnableAvatars = "false";
-        UserPicture = "false";
-      };
-    };
   };
+  
+  # Install sddm-astronaut theme package
+  environment.systemPackages = with pkgs; [
+    sddm-astronaut
+  ];
 }
