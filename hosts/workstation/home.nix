@@ -296,13 +296,6 @@ in
     };
   };
   
-  # QT theming to match GTK (simplified to avoid conflicts)
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk3";
-    style.name = "adwaita-dark";
-  };
-
   # Home cursor theme (for Wayland)
   home.pointerCursor = {
     name = "Adwaita";
