@@ -136,7 +136,7 @@ in
     
     # Theme and cursor support
     adwaita-icon-theme  # Default GNOME icon theme
-    bibata-cursors      # Modern cursor theme
+    # bibata-cursors provided by Stylix
     gtk4  # GTK4 for modern theme support
 
     # libreoffice-qt6-fresh
