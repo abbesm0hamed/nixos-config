@@ -134,10 +134,8 @@ in
     tlp  # Power management
     auto-cpufreq  # Automatic CPU frequency scaling
     
-    # Theme and cursor support
-    adwaita-icon-theme  # Default GNOME icon theme
-    # bibata-cursors provided by Stylix
-    gtk4  # GTK4 for modern theme support
+    # File Management
+    kdePackages.dolphin
 
     # libreoffice-qt6-fresh
 
