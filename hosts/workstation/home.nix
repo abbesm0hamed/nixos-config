@@ -23,7 +23,7 @@ in
     x11.enable = false;  # Disabled for pure Wayland
     name = "capitaine-cursors";
     package = pkgs.capitaine-cursors;
-    size = 24;  # Smaller cursor size
+    size = 28; 
   };
 
   # Install your packages here (keeping it minimal for fast setup)
