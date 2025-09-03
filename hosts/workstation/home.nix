@@ -115,11 +115,6 @@ in
     # System Monitoring & Info
     nh  # NixOS Helper - better CLI for nixos-rebuild and nix commands
     
-    # QT/GTK Theme Integration (complements existing qt6.qtbase/qttools)
-    adwaita-qt6        # QT6 Adwaita theme
-    adwaita-qt         # QT5 Adwaita theme  
-    qt5.qtwayland      # QT5 Wayland support (QT6 Wayland in qtbase)
-    libsForQt5.qtstyleplugins  # Additional QT5 style plugins
     # Qt6 support (essential for Qt-based applications)
     qt6.qtbase   # Core Qt6 framework (includes qtwayland)
     qt6.qttools  # Qt6 development tools
@@ -259,49 +254,5 @@ in
     
     # Path additions
     PATH = "$HOME/.npm-global/bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.local/bin:$PATH";
-  };
-
-  # GTK and QT theme configuration for consistent UI
-  gtk = {
-    enable = true;
-    
-    # Use latest Adwaita theme
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.adwaita-icon-theme;
-    };
-    
-    cursorTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
-      size = 24;
-    };
-    
-    iconTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
-    };
-    
-    font = {
-      name = "SpaceMono Nerd Font";
-      size = 11;
-    };
-    
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
-    };
-    
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
-    };
-  };
-  
-  # Home cursor theme (for Wayland)
-  home.pointerCursor = {
-    name = "Adwaita";
-    package = pkgs.adwaita-icon-theme;
-    size = 24;
-    gtk.enable = true;
-    x11.enable = true;
   };
 }
