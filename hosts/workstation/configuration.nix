@@ -210,16 +210,23 @@ in
   users.users.abbes = {
     isNormalUser = true;
     description = "abbes";
-    extraGroups = [ "networkmanager" "wheel" "vboxsf" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "vboxsf" "docker" "podman" ];
     shell = pkgs.fish;
     packages = with pkgs; [];
   };
 
-  # Docker support (disabled on boot for battery savings)
+  # Container support
   virtualisation.docker = {
     enable = true;
     enableOnBoot = true;
     autoPrune.enable = true;
+  };
+  
+  # Podman as Docker alternative (lighter weight)
+  virtualisation.podman = {
+    enable = false;
+    dockerCompat = true;  # Docker compatibility layer
+    defaultNetwork.settings.dns_enabled = true;
   };
 
   # Power Management for Battery Life
@@ -251,6 +258,14 @@ in
   
   services.printing.enable = lib.mkDefault true;
   services.avahi.enable = lib.mkDefault true;
+  
+  # File system services
+  services.udisks2.enable = true;  # Auto-mount USB drives
+  services.gvfs.enable = true;     # Virtual file system (for file managers)
+  
+  # Security services
+  security.polkit.enable = true;         # Policy kit for privilege escalation
+  services.gnome.gnome-keyring.enable = true;  # Secret service for passwords
   
   # SSH for remote recovery (disabled by default)
   services.openssh = {
