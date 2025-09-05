@@ -9,7 +9,7 @@ in
     ../../globals.nix # Import shared settings
     ./hardware-configuration.nix
     ./stylix.nix
-    ../../modules/sddm.nix
+    ../../modules/dm.nix
   ];
 
   # Bootloader configuration
@@ -118,11 +118,6 @@ in
 
   # Locale
   i18n.defaultLocale = "en_US.UTF-8";
-  
-  # Emergency fallback desktop (lightweight)
-  # To enable fallback: rebuild with --override-input or set to true
-  services.xserver.enable = true;  # Still needed for XFCE fallback
-  services.xserver.desktopManager.xfce.enable = lib.mkDefault false;  # Disabled by default
   
   # Primary compositor
   programs.niri.enable = true;
