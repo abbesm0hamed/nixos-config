@@ -25,6 +25,16 @@
     description = "Abbes";
   };
   
+  # Font configuration
+  fonts = {
+    # System UI font (for SDDM, system dialogs)
+    main = "Inter";
+    # Terminal/code font (for terminals, waybar, fuzzel, notifications)
+    mono = "SpaceMono Nerd Font";
+    # Font size for UI elements
+    size = "12";
+  };
+  
   # Display configuration
   display = {
     # Add display-specific settings here if needed

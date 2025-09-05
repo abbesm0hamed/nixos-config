@@ -2,11 +2,6 @@
 
 let
   locals = import ../hosts/workstation/locals.nix { inherit pkgs; };
-  # Copy wallpaper to system location for SDDM access
-  sddmWallpaper = pkgs.runCommand "sddm-wallpaper" {} ''
-    mkdir -p $out
-    cp ${locals.wallpapers.blurred} $out/wallpaper.jpg
-  '';
 in
 {
   services.displayManager.sddm = {
@@ -15,10 +10,19 @@ in
     
     settings = {
       General = {
-        # Use wallpaper from system-accessible location
-        Background = "${sddmWallpaper}/wallpaper.jpg";
         DefaultSession = "niri.desktop";
         EnableAvatars = false;
+      };
+      
+      Theme = {
+        # Font configuration from locals
+        Font = locals.fonts.main;
+        FontSize = locals.fonts.size;
+        
+        # Clean theme settings
+        Current = "breeze";
+        CursorTheme = "Adwaita";
+        CursorSize = "24";
       };
     };
   };
